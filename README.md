@@ -43,3 +43,26 @@ if sender == self.yellowButton {
 }
 
 ```
+
+<h4> 🚀tapBackgroundColorButton🚀 </h4>
+
+```swift
+
+if sender == self.blackButton {
+  self.changeBackgroundColor(color: .black)
+  self.backgroundColor = .black
+  }
+
+```
+
+<h4> 🚀tapSaveButton🚀 </h4>
+
+```swift
+self.delegate?.changedSetting(
+      text: self.textField.text,
+      textColor: self.textColor,
+      backgroundColor: self.backgroundColor
+    )
+    self.navigationController?.popViewController(animated: true)
+
+```
