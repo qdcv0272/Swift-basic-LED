@@ -11,6 +11,7 @@
 
 <h3 align="center">🔧 func review 🔧</h3>
 
+<h2> SettingViewController </h2>
 
 <h4> 🚀changeTextColor🚀 </h4>
 
@@ -57,12 +58,28 @@ if sender == self.blackButton {
 
 <h4> 🚀tapSaveButton🚀 </h4>
 
+ViewController 에 데이터 전송
+
 ```swift
 self.delegate?.changedSetting(
-      text: self.textField.text,
-      textColor: self.textColor,
-      backgroundColor: self.backgroundColor
-    )
-    self.navigationController?.popViewController(animated: true)
+  text: self.textField.text,
+  textColor: self.textColor,
+  backgroundColor: self.backgroundColor
+)
+self.navigationController?.popViewController(animated: true)
+```
+<h2> ViewController </h2>
 
+<h4> 🚀prepare🚀 </h4>
+
+SettingViewController Downcasting 전달받은 데이터 저장
+
+```swift
+if let settingViewController = segue.destination as? SettingViewController {
+      settingViewController.delegate = self
+      settingViewController.ledText = self.contentsLabel.text
+      settingViewController.textColor = self.contentsLabel.textColor
+      settingViewController.backgroundColor = self.view.backgroundColor ?? .black //만약 옵셔널이면 블랙
+    }
+  }
 ```
