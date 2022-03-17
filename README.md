@@ -33,6 +33,8 @@ self.blackButton.alpha = color == UIColor.black ? 1 : 0.2
 
 <h4> 🚀tapTextColorButton🚀 </h4>
 
+yellowButton 을 눌렀을때 func changeTextColor 에 .yellow 를 넘겨주고 textColor 에게도 yellow 를 넘겨준다
+
 ```swift
 
 if sender == self.yellowButton {
